@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns th:lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<a th:ref ="@{/index}"></a>
+		<h1>Usuarios</h1>
+		<TABLE BORDER>
+			<TR>
+				<td>ID</td>
+				<td>Nombre</td>
+				<td>Apellido</td>
+				<td>Direccion</td>
+				<td>Telefono</td>
+			</TR>
+			
+			
+			<TR th:each ="Usuario: ${usuarios}">
+				<td th::text = "${Usuario.id}"></td>
+				<td th::text = "${Usuario.Nombre}"></td>
+				<td th::text = "${Usuario.Apellido}"></td>
+				<td th::text = "${Usuario.Direccion}"></td>
+				<td th::text = "${Usuario.Telefono}"></td>
+				<td><a th:ref ="@{/usuarios/|{Usuario.id}}">Actualizar</a></td>
+				<td><form th:action = "@/usuarios/|{Usuario.id}|" th:method="delete">
+						<button type="submit">Eliminar</button>
+					</form>
+					
+			</TR>
+		</TABLE>
+		<a th:ref ="@{/usuarios/nuevo}"></a>
+</body>
+</html>

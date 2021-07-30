@@ -1,0 +1,11 @@
+@charset "ISO-8859-1";
+
+/* <img src="FondoPagina.jpg" class="d-block w-100" alt="..."> */
+.body {
+	
+	background: img src = "FondoPagina.jpg";
+	
+}
+
+
+
